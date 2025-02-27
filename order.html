@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Online - Café Nova</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <a href="index.html" class="logo">Café Nova</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="about.html">About us</a>
+                <a href="order.html">Order</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="order-container">
+            <h1 class="order-title">Place Your Order</h1>
+            
+            <div class="order-content">
+                <div class="menu-categories">
+                    <button class="category-btn active" data-category="breakfast">Breakfast</button>
+                    <button class="category-btn" data-category="main">Main Course</button>
+                    <button class="category-btn" data-category="coffee">Coffee</button>
+                    <button class="category-btn" data-category="desserts">Desserts</button>
+                </div>
+
+                <div class="order-grid">
+                    <div class="order-menu">
+                        <div class="menu-items" id="menuItems">
+                            <!-- Menü öğeleri JavaScript ile doldurulacak -->
+                        </div>
+                    </div>
+
+                    <div class="order-summary">
+                        <h2>Your Order</h2>
+                        <div class="cart-items" id="cartItems">
+                            <!-- Sepet öğeleri JavaScript ile doldurulacak -->
+                        </div>
+                        <div class="cart-total">
+                            <div class="subtotal">
+                                <span>Subtotal:</span>
+                                <span id="subtotal">$0.00</span>
+                            </div>
+                            <div class="tax">
+                                <span>Tax (8%):</span>
+                                <span id="tax">$0.00</span>
+                            </div>
+                            <div class="total">
+                                <span>Total:</span>
+                                <span id="total">$0.00</span>
+                            </div>
+                        </div>
+                        <button class="checkout-btn">Proceed to Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Café Nova. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="about.html">About us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

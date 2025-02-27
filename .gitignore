@@ -1,0 +1,10 @@
+# IDE dosyaları
+.vscode/
+.idea/
+
+# Sistem dosyaları
+.DS_Store
+Thumbs.db
+
+# Node modülleri (eğer kullanıyorsanız)
+node_modules/ 
