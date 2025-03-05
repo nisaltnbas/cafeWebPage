@@ -1,15 +1,25 @@
+<!--
+    Cafe Website - Order Page
+    This page allows customers to place online orders from Café Nova's menu.
+    Features include category filtering, shopping cart functionality, and order summary.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tags for character encoding and responsive viewport -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title and external resources -->
     <title>Order Online - Café Nova</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts for typography -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Header section with navigation -->
     <header>
         <nav class="nav-container">
+            <!-- Logo and main navigation links -->
             <a href="index.html" class="logo">Café Nova</a>
             <div class="nav-links">
                 <a href="index.html">Home</a>
@@ -22,11 +32,15 @@
         </nav>
     </header>
 
+    <!-- Main content area -->
     <main>
+        <!-- Order container -->
         <div class="order-container">
             <h1 class="order-title">Place Your Order</h1>
             
+            <!-- Order content with menu and cart -->
             <div class="order-content">
+                <!-- Menu category filters -->
                 <div class="menu-categories">
                     <button class="category-btn active" data-category="breakfast">Breakfast</button>
                     <button class="category-btn" data-category="main">Main Course</button>
@@ -34,32 +48,41 @@
                     <button class="category-btn" data-category="desserts">Desserts</button>
                 </div>
 
+                <!-- Order grid with menu items and cart -->
                 <div class="order-grid">
+                    <!-- Menu items section -->
                     <div class="order-menu">
                         <div class="menu-items" id="menuItems">
-                            <!-- Menü öğeleri JavaScript ile doldurulacak -->
+                            <!-- Menu items will be populated by JavaScript -->
                         </div>
                     </div>
 
+                    <!-- Order summary and cart section -->
                     <div class="order-summary">
                         <h2>Your Order</h2>
+                        <!-- Cart items container -->
                         <div class="cart-items" id="cartItems">
-                            <!-- Sepet öğeleri JavaScript ile doldurulacak -->
+                            <!-- Cart items will be populated by JavaScript -->
                         </div>
+                        <!-- Order total calculations -->
                         <div class="cart-total">
+                            <!-- Subtotal -->
                             <div class="subtotal">
                                 <span>Subtotal:</span>
                                 <span id="subtotal">$0.00</span>
                             </div>
+                            <!-- Tax calculation -->
                             <div class="tax">
                                 <span>Tax (8%):</span>
                                 <span id="tax">$0.00</span>
                             </div>
+                            <!-- Total amount -->
                             <div class="total">
                                 <span>Total:</span>
                                 <span id="total">$0.00</span>
                             </div>
                         </div>
+                        <!-- Checkout button -->
                         <button class="checkout-btn">Proceed to Checkout</button>
                     </div>
                 </div>
@@ -67,6 +90,7 @@
         </div>
     </main>
 
+    <!-- Footer section with copyright and additional links -->
     <footer>
         <div class="footer-content">
             <p>&copy; 2024 Café Nova. All rights reserved.</p>

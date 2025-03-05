@@ -1,15 +1,25 @@
+<!--
+    Cafe Website - Menu Page
+    This page displays the complete menu of Café Nova including breakfast, main courses, coffee, and desserts.
+    Each section contains detailed descriptions and prices of menu items.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tags for character encoding and responsive viewport -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title and external resources -->
     <title>Menu - Café Nova</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts for typography -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Header section with navigation -->
     <header>
         <nav class="nav-container">
+            <!-- Logo and main navigation links -->
             <a href="index.html" class="logo">Café Nova</a>
             <div class="nav-links">
                 <a href="index.html">Home</a>
@@ -22,9 +32,13 @@
         </nav>
     </header>
 
+    <!-- Main content area -->
     <main>
+        <!-- Menu container with cafe information -->
         <div class="menu-container">
+            <!-- Cafe information section -->
             <div class="cafe-info">
+                <!-- Service hours information -->
                 <div class="service-info">
                     <img src="images/service-icon.png" alt="Service" class="info-icon">
                     <div class="info-text">
@@ -35,24 +49,29 @@
                     </div>
                 </div>
 
+                <!-- Cafe name and menu title -->
                 <h1 class="restaurant-name">CAFÉ NOVA</h1>
                 <div class="menu-title">MENU</div>
 
+                <!-- Reservation information -->
                 <div class="reservation-info">
                     <img src="images/reservation-icon.png" alt="Reservation" class="info-icon">
                     <div class="info-text">
                         <h3>MAKE A</h3>
                         <p class="highlight">Reservation</p>
-                        <p>+123-456-7890</p>
+                        <p>+90 555 555 55 55</p>
                         <p>@cafenova</p>
                     </div>
                 </div>
             </div>
 
+            <!-- Menu content sections -->
             <div class="menu-content">
+                <!-- Breakfast section -->
                 <section class="menu-section">
                     <h2>BREAKFAST</h2>
                     <div class="menu-items">
+                        <!-- Breakfast item 1 -->
                         <div class="menu-item">
                             <div class="item-info">
                                 <h3>Eggs Benedict</h3>
@@ -61,6 +80,7 @@
                             <span class="price">$ 5.99</span>
                         </div>
 
+                        <!-- Breakfast item 2 -->
                         <div class="menu-item">
                             <div class="item-info">
                                 <h3>Avocado Toast</h3>
@@ -68,13 +88,14 @@
                             </div>
                             <span class="price">$ 6.99</span>
                         </div>
-                        <!-- Diğer kahvaltı öğeleri -->
                     </div>
                 </section>
 
+                <!-- Main Course section -->
                 <section class="menu-section">
                     <h2>MAIN COURSE</h2>
                     <div class="menu-items">
+                        <!-- Main course item 1 -->
                         <div class="menu-item">
                             <div class="item-info">
                                 <h3>Chicken Piccata</h3>
@@ -82,7 +103,7 @@
                             </div>
                             <span class="price">$ 13.99</span>
                         </div>
-                        <!-- Diğer ana yemekler -->
+                        <!-- Main course item 2 -->
                         <div class="menu-item">
                             <div class="item-info">
                                 <h3>Pasta Carbonara</h3>
@@ -92,9 +113,12 @@
                         </div>  
                     </div>
                 </section>
+
+                <!-- Coffee section -->
                 <section class="menu-section">
                     <h2>COFFEE</h2>
                     <div class="menu-items">
+                        <!-- Coffee item 1 -->
                         <div class="menu-item">
                             <div class="item-info">
                                 <h3>Latte</h3>
@@ -102,6 +126,7 @@
                             </div>
                             <span class="price">$ 5.99</span>
                         </div>
+                        <!-- Coffee item 2 -->
                         <div class="menu-item">
                             <div class="item-info">
                                 <h3>White Chocolate Mocha</h3>
@@ -109,6 +134,7 @@
                             </div>
                             <span class="price">$ 6.99</span>
                         </div>
+                        <!-- Coffee item 3 -->
                         <div class="menu-item">
                             <div class="item-info">
                                 <h3>Iced Caramel Macchiato</h3>
@@ -116,19 +142,22 @@
                             </div>
                             <span class="price">$ 6.99</span>
                         </div>
-                        <!-- Diğer ana yemekler -->
                     </div>
                 </section>        
+
+                <!-- Desserts section -->
                 <section class="menu-section">
                     <h2>DESSERTS</h2>
                     <div class="menu-items">
+                        <!-- Dessert item 1 -->
                         <div class="menu-item">
                             <div class="item-info">
                                 <h3>Chocolate Cake</h3>
                                 <p class="item-description">A creamy, velvety chocolate cake with a smooth, rich flavor.</p>
                             </div>
                             <span class="price">$ 11.99</span>
-                            </div>
+                        </div>
+                        <!-- Dessert item 2 -->
                         <div class="menu-item">
                             <div class="item-info">
                                 <h3>Cheesecake</h3>
@@ -136,6 +165,7 @@
                             </div>
                             <span class="price">$ 13.99</span>
                         </div>
+                        <!-- Dessert item 3 -->
                         <div class="menu-item">
                             <div class="item-info">
                                 <h3>Tiramisu</h3>
@@ -145,15 +175,16 @@
                         </div>
                     </div>
                 </section>
-               
             </div>
 
+            <!-- Menu footer with contact information -->
             <div class="menu-footer">
-                <p>123 Anywhere St., Any City, ST 12345 | +123-456-7890 | @cafenova</p>
+                <p> Etlik, Ankara, 150.cd | +90 555 555 55 55 | @cafenova</p>
             </div>
         </div>
     </main>
 
+    <!-- Footer section with copyright and additional links -->
     <footer>
         <div class="footer-content">
             <p>&copy; 2024 Café Nova. All rights reserved.</p>

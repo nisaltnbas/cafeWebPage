@@ -1,3 +1,8 @@
+/**
+ * Cafe Website Styles
+ * This stylesheet contains all the styling for the cafe website including layout, colors.
+ */
+
 /* Reset and General Styles */
 * {
     margin: 0;
@@ -11,7 +16,7 @@ body {
     background-color: #f9f5f0;
 }
 
-/* Header and Navigation */
+/* Header and Navigation Styles */
 header {
     background-color: #2c1810;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -21,6 +26,7 @@ header {
     z-index: 1000;
 }
 
+/* Navigation container and logo styles */
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -38,6 +44,7 @@ header {
     font-family: 'Playfair Display', serif;
 }
 
+/* Navigation links styling */
 .nav-links {
     display: flex;
     gap: 2rem;
@@ -54,12 +61,13 @@ header {
     color: #ffffff;
 }
 
-/* Main Content */
+/* Main Content Layout */
 main {
     margin-top: 80px;
     min-height: calc(100vh - 160px);
 }
 
+/* Hero Section Styles */
 .hero {
     height: 70vh;
     background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/cafe-hero.jpg');
@@ -89,6 +97,7 @@ main {
     margin-bottom: 2rem;
 }
 
+/* Button Styles */
 .btn {
     display: inline-block;
     padding: 1rem 2rem;
@@ -104,13 +113,14 @@ main {
     color: #e6b17e;
 }
 
+/* Container and Layout */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 4rem 2rem;
 }
 
-/* Menu Cards */
+/* Menu Cards Styles */
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -151,7 +161,7 @@ main {
     font-size: 1.2rem;
 }
 
-/* Gallery */
+/* Gallery Styles */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -175,7 +185,7 @@ main {
     transform: scale(1.1);
 }
 
-/* Contact Form */
+/* Contact Form Styles */
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
@@ -203,7 +213,7 @@ main {
     border-radius: 5px;
 }
 
-/* Footer */
+/* Footer Styles */
 footer {
     background: #2c1810;
     color: #e6b17e;
@@ -229,7 +239,7 @@ footer {
     color: #ffffff;
 }
 
-/* About page updates */
+/* About Page Specific Styles */
 .about-content {
     max-width: 1000px;
     margin: 0 auto;
@@ -276,7 +286,7 @@ footer {
     box-shadow: 0 3px 15px rgba(0,0,0,0.1);
 }
 
-/* New styles for the menu page */
+/* Menu Page Specific Styles */
 .menu-container {
     max-width: 1200px;
     margin: 100px auto;
@@ -399,8 +409,7 @@ footer {
     color: #666;
 }
 
-
-/* Order sayfası stilleri */
+/* Order Page Specific Styles */
 .order-container {
     max-width: 1200px;
     margin: 100px auto;
@@ -555,23 +564,8 @@ footer {
 .checkout-btn:hover {
     background: #2c1810;
 }
-.order-btn{
-    display: block;
-    padding: 1rem 2rem;
-    margin: 2rem auto;
-    background: #e6b17e;
-    color: #2c1810;
-    text-decoration: none;
-    border-radius: 30px;
-    transition: all 0.3s;
-    text-align: center;
-    width: fit-content;
-}
-.order-btn:hover {
-    background: #2c1810;
-    color: #e6b17e;
-}
-/* Öne çıkan ürünler bölümü */
+
+/* Featured Products Section Styles */
 .featured-title {
     font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
@@ -635,6 +629,7 @@ footer {
     font-size: 1.1rem;
 }
 
+/* Order Button Styles */
 .order-btn {
     display: block;
     padding: 1rem 2rem;
@@ -648,6 +643,11 @@ footer {
     grid-column: 1 / -1;
     justify-self: center;
     margin-top: 2rem;
+}
+
+.order-btn:hover {
+    background: #2c1810;
+    color: #e6b17e;
 }
 
 
