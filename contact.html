@@ -11,7 +11,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Page title and external resources -->
     <title>Café Nova - Contact</title>
-    <link rel="stylesheet" href="css/style.css">    
+    <link rel="stylesheet" href="css/style.css">
+    <!-- jQuery UI CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <!-- Google Fonts for typography -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 </head>
@@ -39,7 +41,7 @@
             <h1>Contact</h1>
             <!-- Contact form with input fields -->
             <div class="contact-form">
-                <form action="#" method="POST">
+                <form id="contactForm" action="#" method="POST">
                     <!-- Name input field -->
                     <div class="form-group">
                         <label for="name">Your name</label>
@@ -55,6 +57,8 @@
                         <label for="message">Your message</label>
                         <textarea id="message" name="message" rows="5" required></textarea>
                     </div>
+                    <!-- Form response area -->
+                    <div id="formResponse"></div>
                     <!-- Submit button -->
                     <button type="submit" class="btn">Send</button>
                 </form>
@@ -72,5 +76,11 @@
             </div>
         </div>
     </footer>
+
+    <!-- jQuery and jQuery UI -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 </html>

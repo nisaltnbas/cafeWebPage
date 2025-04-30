@@ -1,17 +1,18 @@
 <!--
     Cafe Website - Order Page
-    This page allows customers to place online orders from Café Nova's menu.
-    Features include category filtering, shopping cart functionality, and order summary.
+    This page allows customers to place orders online with delivery date selection.
 -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <!-- Meta tags for character encoding and responsive viewport -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Page title and external resources -->
-    <title>Order Online - Café Nova</title>
+    <title>Café Nova - Order</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- jQuery UI CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <!-- Google Fonts for typography -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 </head>
@@ -34,60 +35,123 @@
 
     <!-- Main content area -->
     <main>
-        <!-- Order container -->
-        <div class="order-container">
-            <h1 class="order-title">Place Your Order</h1>
-            
-            <!-- Order content with menu and cart -->
-            <div class="order-content">
-                <!-- Menu category filters -->
-                <div class="menu-categories">
-                    <button class="category-btn active" data-category="breakfast">Breakfast</button>
-                    <button class="category-btn" data-category="main">Main Course</button>
-                    <button class="category-btn" data-category="coffee">Coffee</button>
-                    <button class="category-btn" data-category="desserts">Desserts</button>
-                </div>
-
-                <!-- Order grid with menu items and cart -->
-                <div class="order-grid">
-                    <!-- Menu items section -->
-                    <div class="order-menu">
-                        <div class="menu-items" id="menuItems">
-                            <!-- Menu items will be populated by JavaScript -->
+        <div class="container">
+            <h1>Place Your Order</h1>
+            <div class="order-form">
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="deliveryDate">Delivery Date</label>
+                        <input type="text" id="deliveryDate" name="deliveryDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productSearch">Search Products</label>
+                        <input type="text" id="productSearch" placeholder="Type to search products...">
+                    </div>
+                    <div id="menuTabs">
+                        <ul>
+                            <li><a href="#breakfast">Breakfast</a></li>
+                            <li><a href="#main">Main Course</a></li>
+                            <li><a href="#coffee">Coffee</a></li>
+                            <li><a href="#desserts">Desserts</a></li>
+                        </ul>
+                        <div id="breakfast">
+                            <div class="product-item">
+                                <h3>Eggs Benedict</h3>
+                                <p>A toasted English muffin topped with Canadian bacon, a poached egg, and hollandaise sauce.</p>
+                                <span class="price">$5.99</span>
+                                <button class="add-to-cart" data-product="Eggs Benedict">Add to Order</button>
+                            </div>
+                            <div class="product-item">
+                                <h3>Avocado Toast</h3>
+                                <p>Toasted bread topped with mashed avocado, salt and pepper, and a sprinkle of red pepper flakes for a little heat.</p>
+                                <span class="price">$6.99</span>
+                                <button class="add-to-cart" data-product="Avocado Toast">Add to Order</button>
+                            </div>
+                        </div>
+                        <div id="main">
+                            <div class="product-item">
+                                <h3>Chicken Piccata</h3>
+                                <p>Tender chicken breasts sautéed in a flavorful sauce of white wine, capers, and lemon juice. Served with a side of garlic mashed potatoes and steamed asparagus.</p>
+                                <span class="price">$13.99</span>
+                                <button class="add-to-cart" data-product="Chicken Piccata">Add to Order</button>
+                            </div>
+                            <div class="product-item">
+                                <h3>Pasta Carbonara</h3>
+                                <p>A creamy, velvety pasta carbonara with a smooth, rich flavor.</p>
+                                <span class="price">$14.99</span>
+                                <button class="add-to-cart" data-product="Pasta Carbonara">Add to Order</button>
+                            </div>
+                        </div>
+                        <div id="coffee">
+                            <div class="product-item">
+                                <h3>Latte</h3>
+                                <p>A creamy, velvety latte with a smooth, rich flavor.</p>
+                                <span class="price">$5.99</span>
+                                <button class="add-to-cart" data-product="Latte">Add to Order</button>
+                            </div>
+                            <div class="product-item">
+                                <h3>White Chocolate Mocha</h3>
+                                <p>A creamy, velvety white chocolate mocha with a smooth, rich flavor.</p>
+                                <span class="price">$6.99</span>
+                                <button class="add-to-cart" data-product="White Chocolate Mocha">Add to Order</button>
+                            </div>
+                            <div class="product-item">
+                                <h3>Iced Caramel Macchiato</h3>
+                                <p>A creamy, velvety iced caramel macchiato with a smooth, rich flavor.</p>
+                                <span class="price">$6.99</span>
+                                <button class="add-to-cart" data-product="Iced Caramel Macchiato">Add to Order</button>
+                            </div>
+                        </div>
+                        <div id="desserts">
+                            <div class="product-item">
+                                <h3>Chocolate Cake</h3>
+                                <p>A creamy, velvety chocolate cake with a smooth, rich flavor.</p>
+                                <span class="price">$11.99</span>
+                                <button class="add-to-cart" data-product="Chocolate Cake">Add to Order</button>
+                            </div>
+                            <div class="product-item">
+                                <h3>Cheesecake</h3>
+                                <p>A creamy, velvety cheesecake with a smooth, rich flavor.</p>
+                                <span class="price">$13.99</span>
+                                <button class="add-to-cart" data-product="Cheesecake">Add to Order</button>
+                            </div>
+                            <div class="product-item">
+                                <h3>Tiramisu</h3>
+                                <p>A creamy, velvety tiramisu with a smooth, rich flavor.</p>
+                                <span class="price">$12.99</span>
+                                <button class="add-to-cart" data-product="Tiramisu">Add to Order</button>
+                            </div>
                         </div>
                     </div>
-
-                    <!-- Order summary and cart section -->
-                    <div class="order-summary">
-                        <h2>Your Order</h2>
-                        <!-- Cart items container -->
-                        <div class="cart-items" id="cartItems">
-                            <!-- Cart items will be populated by JavaScript -->
-                        </div>
-                        <!-- Order total calculations -->
-                        <div class="cart-total">
-                            <!-- Subtotal -->
-                            <div class="subtotal">
-                                <span>Subtotal:</span>
-                                <span id="subtotal">$0.00</span>
-                            </div>
-                            <!-- Tax calculation -->
-                            <div class="tax">
-                                <span>Tax (8%):</span>
-                                <span id="tax">$0.00</span>
-                            </div>
-                            <!-- Total amount -->
-                            <div class="total">
-                                <span>Total:</span>
-                                <span id="total">$0.00</span>
-                            </div>
-                        </div>
-                        <!-- Checkout button -->
-                        <button class="checkout-btn">Proceed to Checkout</button>
+                    <div id="orderSummary">
+                        <h3>Your Order</h3>
+                        <ul id="orderItems"></ul>
+                        <div id="orderTotal">Total: $0.00</div>
                     </div>
-                </div>
+                    <div id="orderResponse"></div>
+                    <button type="submit" class="btn">Place Order</button>
+                </form>
             </div>
         </div>
+
+        <!-- Order Confirmation Dialog -->
+        <div id="orderDialog" title="Order Status" style="display: none;">
+            <p><i class="fas fa-check-circle" style="color: #28a745; margin-right: 10px;"></i> <span id="dialogMessage"></span></p>
+            <div id="orderDetails"></div>
+        </div>
+
     </main>
 
     <!-- Footer section with copyright and additional links -->
@@ -100,5 +164,11 @@
             </div>
         </div>
     </footer>
+
+    <!-- jQuery and jQuery UI -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 </html> 

@@ -1,7 +1,6 @@
 <!--
     Cafe Website - Gallery Page
-    This page showcases a collection of images featuring Café Nova's ambiance, food, and beverages.
-    The gallery displays various aspects of the cafe including preparation, presentation, and atmosphere.
+    This page showcases cafe products and ambiance through images with lightbox effect.
 -->
 <!DOCTYPE html>
 <html lang="tr">
@@ -10,8 +9,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Page title and external resources -->
-    <title>Galerry - Café Nova</title>
+    <title>Café Nova - Gallery</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- Lightbox2 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
     <!-- Google Fonts for typography -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 </head>
@@ -36,46 +37,82 @@
     <main>
         <!-- Gallery container -->
         <div class="container">
-            <h1>Gallery</h1>
+            <h1>Our Gallery</h1>
             <!-- Image grid layout -->
             <div class="gallery-grid">
                 <!-- Gallery items with images -->
-                <div class="gallery-item">
-                    <img src="images/gallery1.jpg" alt="Café Preparation">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery2.jpg" alt="Café Preparation">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery3.jpg" alt="Café Preparation">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery4.jpg" alt="Café Preparation">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery5.jpg" alt="Café Preparation">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery6.jpg" alt="Café Preparation">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery7.jpg" alt="Café Preparation">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery8.jpg" alt="Café Preparation">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery9.jpg" alt="Café Preparation">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery10.jpg" alt="Café Preparation">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery11.jpg" alt="Café Preparation">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery12.jpg" alt="Café Preparation">
-                </div>
+                <a href="images/gallery/gallery1.jpg" data-lightbox="cafe-gallery" class="gallery-item">
+                    <img src="images/gallery/gallery1.jpg" alt="Café Nova Ambiance">
+                    <div class="gallery-overlay">
+                        <span>Café Ambiance</span>
+                    </div>
+                </a>
+                <a href="images/gallery/gallery2.jpg" data-lightbox="cafe-gallery" class="gallery-item">
+                    <img src="images/gallery/gallery2.jpg" alt="Special Coffee">
+                    <div class="gallery-overlay">
+                        <span>Special Coffee</span>
+                    </div>
+                </a>
+                <a href="images/gallery/gallery3.jpg" data-lightbox="cafe-gallery" class="gallery-item">
+                    <img src="images/gallery/gallery3.jpg" alt="Fresh Pastries">
+                    <div class="gallery-overlay">
+                        <span>Fresh Pastries</span>
+                    </div>
+                </a>
+                <a href="images/gallery/gallery4.jpg" data-lightbox="cafe-gallery" class="gallery-item">
+                    <img src="images/gallery/gallery4.jpg" alt="Coffee Art">
+                    <div class="gallery-overlay">
+                        <span>Coffee Art</span>
+                    </div>
+                </a>
+                <a href="images/gallery/gallery5.jpg" data-lightbox="cafe-gallery" class="gallery-item">
+                    <img src="images/gallery/gallery5.jpg" alt="Dessert Selection">
+                    <div class="gallery-overlay">
+                        <span>Dessert Selection</span>
+                    </div>
+                </a>
+                <a href="images/gallery/gallery6.jpg" data-lightbox="cafe-gallery" class="gallery-item">
+                    <img src="images/gallery/gallery6.jpg" alt="Café Interior">
+                    <div class="gallery-overlay">
+                        <span>Café Interior</span>
+                    </div>
+                </a>
+                <a href="images/gallery/gallery7.jpg" data-lightbox="cafe-gallery" class="gallery-item">
+                    <img src="images/gallery/gallery7.jpg" alt="Coffee Beans">
+                    <div class="gallery-overlay">
+                        <span>Coffee Beans</span>
+                    </div>
+                </a>
+                <a href="images/gallery/gallery8.jpg" data-lightbox="cafe-gallery" class="gallery-item">
+                    <img src="images/gallery/gallery8.jpg" alt="Breakfast Menu">
+                    <div class="gallery-overlay">
+                        <span>Breakfast Menu</span>
+                    </div>
+                </a>
+                <a href="images/gallery/gallery9.jpg" data-lightbox="cafe-gallery" class="gallery-item">
+                    <img src="images/gallery/gallery9.jpg" alt="Coffee Preparation">
+                    <div class="gallery-overlay">
+                        <span>Coffee Preparation</span>
+                    </div>
+                </a>
+                <a href="images/gallery/gallery10.jpg" data-lightbox="cafe-gallery" class="gallery-item">
+                    <img src="images/gallery/gallery10.jpg" alt="Café Atmosphere">
+                    <div class="gallery-overlay">
+                        <span>Café Atmosphere</span>
+                    </div>
+                </a>
+                <a href="images/gallery/gallery11.jpg" data-lightbox="cafe-gallery" class="gallery-item">
+                    <img src="images/gallery/gallery11.jpg" alt="Special Drinks">
+                    <div class="gallery-overlay">
+                        <span>Special Drinks</span>
+                    </div>
+                </a>
+                <a href="images/gallery/gallery12.jpg" data-lightbox="cafe-gallery" class="gallery-item">
+                    <img src="images/gallery/gallery12.jpg" alt="Café Experience">
+                    <div class="gallery-overlay">
+                        <span>Café Experience</span>
+                    </div>
+                </a>
             </div>
         </div>
     </main>
@@ -90,5 +127,12 @@
             </div>
         </div>
     </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Lightbox2 Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 </html>
