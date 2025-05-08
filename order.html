@@ -59,82 +59,7 @@
                         <label for="productSearch">Search Products</label>
                         <input type="text" id="productSearch" placeholder="Type to search products...">
                     </div>
-                    <div id="menuTabs">
-                        <ul>
-                            <li><a href="#breakfast">Breakfast</a></li>
-                            <li><a href="#main">Main Course</a></li>
-                            <li><a href="#coffee">Coffee</a></li>
-                            <li><a href="#desserts">Desserts</a></li>
-                        </ul>
-                        <div id="breakfast">
-                            <div class="product-item">
-                                <h3>Eggs Benedict</h3>
-                                <p>A toasted English muffin topped with Canadian bacon, a poached egg, and hollandaise sauce.</p>
-                                <span class="price">$5.99</span>
-                                <button class="add-to-cart" data-product="Eggs Benedict">Add to Order</button>
-                            </div>
-                            <div class="product-item">
-                                <h3>Avocado Toast</h3>
-                                <p>Toasted bread topped with mashed avocado, salt and pepper, and a sprinkle of red pepper flakes for a little heat.</p>
-                                <span class="price">$6.99</span>
-                                <button class="add-to-cart" data-product="Avocado Toast">Add to Order</button>
-                            </div>
-                        </div>
-                        <div id="main">
-                            <div class="product-item">
-                                <h3>Chicken Piccata</h3>
-                                <p>Tender chicken breasts sautéed in a flavorful sauce of white wine, capers, and lemon juice. Served with a side of garlic mashed potatoes and steamed asparagus.</p>
-                                <span class="price">$13.99</span>
-                                <button class="add-to-cart" data-product="Chicken Piccata">Add to Order</button>
-                            </div>
-                            <div class="product-item">
-                                <h3>Pasta Carbonara</h3>
-                                <p>A creamy, velvety pasta carbonara with a smooth, rich flavor.</p>
-                                <span class="price">$14.99</span>
-                                <button class="add-to-cart" data-product="Pasta Carbonara">Add to Order</button>
-                            </div>
-                        </div>
-                        <div id="coffee">
-                            <div class="product-item">
-                                <h3>Latte</h3>
-                                <p>A creamy, velvety latte with a smooth, rich flavor.</p>
-                                <span class="price">$5.99</span>
-                                <button class="add-to-cart" data-product="Latte">Add to Order</button>
-                            </div>
-                            <div class="product-item">
-                                <h3>White Chocolate Mocha</h3>
-                                <p>A creamy, velvety white chocolate mocha with a smooth, rich flavor.</p>
-                                <span class="price">$6.99</span>
-                                <button class="add-to-cart" data-product="White Chocolate Mocha">Add to Order</button>
-                            </div>
-                            <div class="product-item">
-                                <h3>Iced Caramel Macchiato</h3>
-                                <p>A creamy, velvety iced caramel macchiato with a smooth, rich flavor.</p>
-                                <span class="price">$6.99</span>
-                                <button class="add-to-cart" data-product="Iced Caramel Macchiato">Add to Order</button>
-                            </div>
-                        </div>
-                        <div id="desserts">
-                            <div class="product-item">
-                                <h3>Chocolate Cake</h3>
-                                <p>A creamy, velvety chocolate cake with a smooth, rich flavor.</p>
-                                <span class="price">$11.99</span>
-                                <button class="add-to-cart" data-product="Chocolate Cake">Add to Order</button>
-                            </div>
-                            <div class="product-item">
-                                <h3>Cheesecake</h3>
-                                <p>A creamy, velvety cheesecake with a smooth, rich flavor.</p>
-                                <span class="price">$13.99</span>
-                                <button class="add-to-cart" data-product="Cheesecake">Add to Order</button>
-                            </div>
-                            <div class="product-item">
-                                <h3>Tiramisu</h3>
-                                <p>A creamy, velvety tiramisu with a smooth, rich flavor.</p>
-                                <span class="price">$12.99</span>
-                                <button class="add-to-cart" data-product="Tiramisu">Add to Order</button>
-                            </div>
-                        </div>
-                    </div>
+                    <div id="order-menu-tabs"></div>
                     <div id="orderSummary">
                         <h3>Your Order</h3>
                         <ul id="orderItems"></ul>
@@ -161,6 +86,9 @@
             <div class="footer-links">
                 <a href="about.html">About us</a>
                 <a href="contact.html">Contact</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="sitemap.html">Site Map</a>
+                <a href="support.html">Support</a>
             </div>
         </div>
     </footer>
@@ -170,5 +98,20 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <!-- Custom JavaScript -->
     <script src="js/main.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      (function(){
+        emailjs.init("HxxUR9m7kblXxlvIJ");
+      })();
+      document.getElementById('orderForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        emailjs.sendForm('service_w67e1zg', 'template_jbsye6a', this)
+          .then(function() {
+            alert('Your order has been sent successfully!');
+          }, function(error) {
+            alert('An error occurred: ' + JSON.stringify(error));
+          });
+      });
+    </script>
 </body>
 </html> 

@@ -56,7 +56,7 @@ $(document).ready(function() {
                 }
             });
 
-            // Arama kutusunu temizle
+            // Clear search box
             setTimeout(() => {
                 $("#productSearch").val("");
             }, 100);
@@ -86,11 +86,12 @@ $(document).ready(function() {
         "Tiramisu": 12.99
     };
 
-    // Add to cart functionality
-    $(".add-to-cart").click(function() {
+    // Use event delegation for dynamically loaded .add-to-cart buttons
+    $(document).on("click", ".add-to-cart", function() {
         var product = $(this).data("product");
-        var price = prices[product];
-        
+        // Find the price from the sibling .price element
+        var price = parseFloat($(this).siblings(".price").text().replace("$", ""));
+
         // Check if item already exists in cart
         var existingItem = orderItems.find(item => item.name === product);
         if (existingItem) {
@@ -102,11 +103,9 @@ $(document).ready(function() {
                 quantity: 1
             });
         }
-        
         updateOrderSummary();
     });
 
-    // Update order summary
     function updateOrderSummary() {
         var $orderItems = $("#orderItems");
         var $orderTotal = $("#orderTotal");
@@ -147,4 +146,33 @@ $(document).ready(function() {
         orderItems = [];
         updateOrderSummary();
     });
+
+    // Dynamic menu loading for order page
+    if (document.getElementById('order-menu-tabs')) {
+        fetch('data/menu.json')
+            .then(response => response.json())
+            .then(data => {
+                // Build tabs
+                let tabsNav = '<ul>';
+                let tabsContent = '';
+                data.categories.forEach((cat, i) => {
+                    tabsNav += `<li><a href="#tab-${cat.id}">${cat.name}</a></li>`;
+                    tabsContent += `<div id="tab-${cat.id}">`;
+                    cat.items.forEach(item => {
+                        tabsContent += `
+                            <div class="product-item">
+                                <h3>${item.name}</h3>
+                                <p>${item.description}</p>
+                                <span class="price">$${item.price}</span>
+                                <button class="add-to-cart" data-product="${item.name}">Add to Order</button>
+                            </div>
+                        `;
+                    });
+                    tabsContent += '</div>';
+                });
+                tabsNav += '</ul>';
+                $('#order-menu-tabs').html(tabsNav + tabsContent);
+                $('#order-menu-tabs').tabs();
+            });
+    }
 }); 

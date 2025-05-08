@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- Google Fonts for typography -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <!-- jQuery UI CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 <body>
     <!-- Header section with navigation -->
@@ -65,116 +67,25 @@
                 </div>
             </div>
 
-            <!-- Menu content sections -->
-            <div class="menu-content">
-                <!-- Breakfast section -->
-                <section class="menu-section">
-                    <h2>BREAKFAST</h2>
-                    <div class="menu-items">
-                        <!-- Breakfast item 1 -->
-                        <div class="menu-item">
-                            <div class="item-info">
-                                <h3>Eggs Benedict</h3>
-                                <p class="item-description">A toasted English muffin topped with Canadian bacon, a poached egg, and hollandaise sauce.</p>
-                            </div>
-                            <span class="price">$ 5.99</span>
-                        </div>
+            <!-- Category Filter -->
+            <div class="category-filter">
+                <button class="category-btn active" data-category="all">All</button>
+                <button class="category-btn" data-category="coffee">Coffee</button>
+                <button class="category-btn" data-category="desserts">Desserts</button>
+                <button class="category-btn" data-category="breakfast">Breakfast</button>
+                <button class="category-btn" data-category="main">Main Courses</button>
+                <button class="category-btn" data-category="salads">Salads</button>
+                <button class="category-btn" data-category="cold-drinks">Cold Drinks</button>
+            </div>
 
-                        <!-- Breakfast item 2 -->
-                        <div class="menu-item">
-                            <div class="item-info">
-                                <h3>Avocado Toast</h3>
-                                <p class="item-description">Toasted bread topped with mashed avocado, salt and pepper, and a sprinkle of red pepper flakes for a little heat.</p>
-                            </div>
-                            <span class="price">$ 6.99</span>
-                        </div>
-                    </div>
-                </section>
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" id="menu-search" placeholder="Search menu items...">
+            </div>
 
-                <!-- Main Course section -->
-                <section class="menu-section">
-                    <h2>MAIN COURSE</h2>
-                    <div class="menu-items">
-                        <!-- Main course item 1 -->
-                        <div class="menu-item">
-                            <div class="item-info">
-                                <h3>Chicken Piccata</h3>
-                                <p class="item-description">Tender chicken breasts sautéed in a flavorful sauce of white wine, capers, and lemon juice. Served with a side of garlic mashed potatoes and steamed asparagus.</p>
-                            </div>
-                            <span class="price">$ 13.99</span>
-                        </div>
-                        <!-- Main course item 2 -->
-                        <div class="menu-item">
-                            <div class="item-info">
-                                <h3>Pasta Carbonara</h3>
-                                <p class="item-description">A creamy, velvety pasta carbonara with a smooth, rich flavor.</p>
-                            </div>
-                            <span class="price">$ 14.99</span>
-                        </div>  
-                    </div>
-                </section>
-
-                <!-- Coffee section -->
-                <section class="menu-section">
-                    <h2>COFFEE</h2>
-                    <div class="menu-items">
-                        <!-- Coffee item 1 -->
-                        <div class="menu-item">
-                            <div class="item-info">
-                                <h3>Latte</h3>
-                                <p class="item-description">A creamy, velvety latte with a smooth, rich flavor.</p>
-                            </div>
-                            <span class="price">$ 5.99</span>
-                        </div>
-                        <!-- Coffee item 2 -->
-                        <div class="menu-item">
-                            <div class="item-info">
-                                <h3>White Chocolate Mocha</h3>
-                                <p class="item-description">A creamy, velvety white chocolate mocha with a smooth, rich flavor.</p>
-                            </div>
-                            <span class="price">$ 6.99</span>
-                        </div>
-                        <!-- Coffee item 3 -->
-                        <div class="menu-item">
-                            <div class="item-info">
-                                <h3>Iced Caramel Macchiato</h3>
-                                <p class="item-description">A creamy, velvety iced caramel macchiato with a smooth, rich flavor.</p>
-                            </div>
-                            <span class="price">$ 6.99</span>
-                        </div>
-                    </div>
-                </section>        
-
-                <!-- Desserts section -->
-                <section class="menu-section">
-                    <h2>DESSERTS</h2>
-                    <div class="menu-items">
-                        <!-- Dessert item 1 -->
-                        <div class="menu-item">
-                            <div class="item-info">
-                                <h3>Chocolate Cake</h3>
-                                <p class="item-description">A creamy, velvety chocolate cake with a smooth, rich flavor.</p>
-                            </div>
-                            <span class="price">$ 11.99</span>
-                        </div>
-                        <!-- Dessert item 2 -->
-                        <div class="menu-item">
-                            <div class="item-info">
-                                <h3>Cheesecake</h3>
-                                <p class="item-description">A creamy, velvety cheesecake with a smooth, rich flavor.</p>
-                            </div>
-                            <span class="price">$ 13.99</span>
-                        </div>
-                        <!-- Dessert item 3 -->
-                        <div class="menu-item">
-                            <div class="item-info">
-                                <h3>Tiramisu</h3>
-                                <p class="item-description">A creamy, velvety tiramisu with a smooth, rich flavor.</p>
-                            </div>
-                            <span class="price">$ 12.99</span>
-                        </div>
-                    </div>
-                </section>
+            <!-- Dynamic Menu Content -->
+            <div id="menu-items" class="menu-items">
+                <!-- Menu items will be loaded dynamically via AJAX -->
             </div>
 
             <!-- Menu footer with contact information -->
@@ -191,8 +102,17 @@
             <div class="footer-links">
                 <a href="about.html">About us</a>
                 <a href="contact.html">Contact</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="sitemap.html">Site Map</a>
+                <a href="support.html">Support</a>
             </div>
         </div>
     </footer>
+
+    <!-- jQuery and jQuery UI -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="js/ajax.js"></script>
 </body>
 </html>

@@ -1,0 +1,36 @@
+{
+    "dailySpecials": {
+        "coffee": {
+            "name": "Hazelnut Caramel Latte",
+            "description": "Latte prepared with special hazelnut and caramel sauce",
+            "price": 5.99,
+            "discount": "20%"
+        },
+        "dessert": {
+            "name": "Tiramisu",
+            "description": "Specially prepared Italian-style tiramisu",
+            "price": 6.99,
+            "discount": "15%"
+        }
+    },
+    "reviews": [
+        {
+            "name": "Ayşe Y.",
+            "rating": 5,
+            "comment": "My favorite cafe! The coffee is amazing.",
+            "date": "2024-03-15"
+        },
+        {
+            "name": "Mehmet K.",
+            "rating": 5,
+            "comment": "The tiramisu is delicious, I definitely recommend it.",
+            "date": "2024-03-14"
+        },
+        {
+            "name": "Zeynep A.",
+            "rating": 4,
+            "comment": "Very nice atmosphere, the coffee is great.",
+            "date": "2024-03-13"
+        }
+    ]
+} 
