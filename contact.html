@@ -18,29 +18,19 @@
     <!-- Google Fonts for typography -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
     <!-- JavaScript files -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="js/utilities.js" defer></script>
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Google Maps -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsMa2j5EzTZffuqfT0Xs7aI4pE7-ISsCg&callback=initMap" async defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+    <!-- Contact page specific JavaScript -->
     <script src="js/contact.js" defer></script>
 </head>
 <body>
-    <!-- Header section with navigation -->
-    <header>
-        <nav class="nav-container">
-            <!-- Logo and main navigation links -->
-            <a href="index.html" class="logo">Café Nova</a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="menu.html">Menu</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="about.html">About us</a>
-                <a href="order.html">Order</a>
-                <a href="contact.html">Contact</a>
-            </div>
-        </nav>
-    </header>
+    <!-- Header placeholder - will be loaded from header.html -->
+    <div id="header-placeholder"></div>
     
     <!-- Main content area -->
     <main>
@@ -65,6 +55,10 @@
                         <label for="message">Your message</label>
                         <textarea id="message" name="message" rows="5" required></textarea>
                     </div>
+                    <!-- Hidden fields for EmailJS -->
+                    <input type="hidden" id="to_email" name="to_email" value="cafenero20@gmail.com">
+                    <input type="hidden" id="to_name" name="to_name" value="Café Nova">
+                    <input type="hidden" id="subject" name="subject" value="New Contact Form Submission">
                     <!-- Form response area -->
                     <div id="formResponse"></div>
                     <!-- Submit button -->
@@ -81,18 +75,7 @@
         </div>
     </main>
 
-    <!-- Footer section with copyright and additional links -->
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 Café Nova. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="about.html">About us</a>
-                <a href="contact.html">Contact</a>
-                <a href="terms.html">Terms of Service</a>
-                <a href="sitemap.html">Site Map</a>
-                <a href="support.html">Support</a>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer placeholder - will be loaded from footer.html -->
+    <div id="footer-placeholder"></div>
 </body>
 </html>

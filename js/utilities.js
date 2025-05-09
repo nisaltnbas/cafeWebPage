@@ -78,4 +78,49 @@ function loadJsonData(url, callback, errorCallback) {
                 errorCallback(error);
             }
         });
-} 
+}
+
+/**
+ * Load header content from header.html file
+ */
+function loadHeader() {
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Error loading header:', error);
+        });
+}
+
+/**
+ * Load footer content from footer.html file
+ */
+function loadFooter() {
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Error loading footer:', error);
+        });
+}
+
+/**
+ * Initialize header and footer components
+ */
+function initComponents() {
+    document.addEventListener('DOMContentLoaded', function() {
+        if (document.getElementById('header-placeholder')) {
+            loadHeader();
+        }
+        if (document.getElementById('footer-placeholder')) {
+            loadFooter();
+        }
+    });
+}
+
+// Call the function to initialize components
+initComponents(); 
