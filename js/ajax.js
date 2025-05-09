@@ -59,8 +59,8 @@ function loadMenuItems(category = 'all', searchTerm = '') {
 
 // Function to load daily specials and reviews
 function loadDailySpecials() {
-    // Fetch from external API
-    fetch('https://api.publicapis.org/entries?category=food&https=true')
+    // Fetch coffee specials from external API
+    fetch('https://api.sampleapis.com/coffee/hot')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -70,8 +70,8 @@ function loadDailySpecials() {
         .then(data => {
             const specialsContainer = document.getElementById('daily-specials');
             if (specialsContainer) {
-                // Get random entries from the API response
-                const randomEntries = data.entries
+                // Get random coffee items from the API response
+                const randomItems = data
                     .sort(() => 0.5 - Math.random())
                     .slice(0, 2);
 
@@ -79,37 +79,111 @@ function loadDailySpecials() {
                     <div class="specials-section">
                         <h3>Daily Special Menu</h3>
                         <div class="special-items">
-                            ${randomEntries.map(entry => `
+                            ${randomItems.map(item => `
                                 <div class="special-item">
-                                    <h4>${entry.API}</h4>
-                                    <p>${entry.Description}</p>
+                                    <h4>${item.title}</h4>
+                                    <p>${item.description}</p>
                                     <div class="price-info">
-                                        <span class="original-price">$${(Math.random() * 10 + 5).toFixed(2)}</span>
+                                        <span class="original-price">$${item.price}</span>
                                         <span class="discount">20% discount</span>
                                     </div>
                                 </div>
                             `).join('')}
                         </div>
                     </div>
-                    <div class="reviews-section">
-                        <h3>Customer Reviews</h3>
-                        <div class="reviews-list">
-                            ${data.entries.slice(0, 3).map(entry => `
-                                <div class="review-item">
-                                    <div class="review-header">
-                                        <span class="reviewer-name">${entry.API}</span>
-                                        <span class="review-date">${new Date().toLocaleDateString()}</span>
-                                    </div>
-                                    <div class="review-rating">
-                                        ${'★'.repeat(Math.floor(Math.random() * 3) + 3)}${'☆'.repeat(2)}
-                                    </div>
-                                    <p class="review-comment">${entry.Description}</p>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
                 `;
                 specialsContainer.innerHTML = specialsHTML;
+
+                // Fetch reviews from external API
+                fetch('https://jsonplaceholder.typicode.com/comments')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(reviewsData => {
+                        // Get more random reviews for horizontal scroll
+                        const randomReviews = reviewsData
+                            .sort(() => 0.5 - Math.random())
+                            .slice(0, 8)
+                            .map(review => ({
+                                name: review.name,
+                                date: new Date().toLocaleDateString(),
+                                rating: Math.floor(Math.random() * 3) + 3, // Random rating between 3-5
+                                comment: review.body
+                            }));
+
+                        const reviewsHTML = `
+                            <div class="reviews-section">
+                                <h3>Customer Reviews</h3>
+                                <div class="reviews-arrows-container">
+                                    <button class="reviews-arrow left" aria-label="Scroll left">&#8592;</button>
+                                    <div class="reviews-horizontal-scroll">
+                                        ${randomReviews.map(review => `
+                                            <div class="review-card">
+                                                <div class="review-header">
+                                                    <span class="reviewer-name">${review.name}</span>
+                                                    <span class="review-date">${review.date}</span>
+                                                </div>
+                                                <div class="review-rating">
+                                                    ${'★'.repeat(review.rating)}${'☆'.repeat(5-review.rating)}
+                                                </div>
+                                                <p class="review-comment">${review.comment}</p>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                    <button class="reviews-arrow right" aria-label="Scroll right">&#8594;</button>
+                                </div>
+                            </div>
+                        `;
+                        specialsContainer.innerHTML += reviewsHTML;
+                        // Add JS for arrow scroll
+                        setTimeout(() => {
+                            const scrollContainer = specialsContainer.querySelector('.reviews-horizontal-scroll');
+                            const leftBtn = specialsContainer.querySelector('.reviews-arrow.left');
+                            const rightBtn = specialsContainer.querySelector('.reviews-arrow.right');
+                            if (leftBtn && rightBtn && scrollContainer) {
+                                leftBtn.onclick = () => {
+                                    scrollContainer.scrollBy({ left: -350, behavior: 'smooth' });
+                                };
+                                rightBtn.onclick = () => {
+                                    scrollContainer.scrollBy({ left: 350, behavior: 'smooth' });
+                                };
+                            }
+                        }, 100);
+                    })
+                    .catch(error => {
+                        console.error('Error loading reviews:', error);
+                        // Fallback to local reviews if API fails
+                        fetch('data/reviews.json')
+                            .then(response => response.json())
+                            .then(localReviews => {
+                                const reviewsHTML = `
+                                    <div class="reviews-section">
+                                        <h3>Customer Reviews</h3>
+                                        <div class="reviews-list">
+                                            ${localReviews.reviews.map(review => `
+                                                <div class="review-item">
+                                                    <div class="review-header">
+                                                        <span class="reviewer-name">${review.name}</span>
+                                                        <span class="review-date">${review.date}</span>
+                                                    </div>
+                                                    <div class="review-rating">
+                                                        ${'★'.repeat(review.rating)}${'☆'.repeat(5-review.rating)}
+                                                    </div>
+                                                    <p class="review-comment">${review.comment}</p>
+                                                </div>
+                                            `).join('')}
+                                        </div>
+                                    </div>
+                                `;
+                                specialsContainer.innerHTML += reviewsHTML;
+                            })
+                            .catch(error => {
+                                console.error('Error loading local reviews:', error);
+                            });
+                    });
             }
         })
         .catch(error => {

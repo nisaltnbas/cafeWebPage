@@ -135,7 +135,20 @@ $(document).ready(function() {
         this.reset();
     });
 
+    // Step 2: Show user info form only after products are selected
+    $(document).on('click', '#continueToUserInfo', function() {
+        if (orderItems.length === 0) {
+            $("#orderResponse").html("<div class='error'>Please add at least one item to your order.</div>");
+            return;
+        }
+        $("#order-step-products").hide();
+        $("#orderForm").show();
+        $("#orderResponse").html("");
+    });
+
+    // Clear error message on form submit
     $("#orderForm").submit(function(e) {
+        $("#orderResponse").html("");
         e.preventDefault();
         if (orderItems.length === 0) {
             $("#orderResponse").html("<div class='error'>Please add at least one item to your order.</div>");

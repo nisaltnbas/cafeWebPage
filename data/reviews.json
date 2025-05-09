@@ -1,0 +1,22 @@
+{
+    "reviews": [
+        {
+            "name": "Ahmet Y.",
+            "date": "2024-03-15",
+            "rating": 5,
+            "comment": "Harika bir kahve deneyimi! Espresso mükemmel hazırlanmış."
+        },
+        {
+            "name": "Ayşe K.",
+            "date": "2024-03-14",
+            "rating": 4,
+            "comment": "Latte çok lezzetli, fiyatı da uygun. Kesinlikle tavsiye ederim."
+        },
+        {
+            "name": "Mehmet S.",
+            "date": "2024-03-13",
+            "rating": 5,
+            "comment": "Sıcak çikolata enfes! Özellikle kreması çok güzel."
+        }
+    ]
+} 
