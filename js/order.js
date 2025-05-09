@@ -1,4 +1,4 @@
-// jQuery plugins and UI widgets implementation
+// Order page specific JavaScript
 $(document).ready(function() {
     // 1. jQuery UI Datepicker for order form
     $("#deliveryDate").datepicker({
@@ -127,13 +127,6 @@ $(document).ready(function() {
         
         $orderTotal.text(`Total: $${total.toFixed(2)}`);
     }
-
-    // Basic form submissions
-    $("#contactForm").submit(function(e) {
-        e.preventDefault();
-        $("#formResponse").html("<div class='success'>Message sent successfully!</div>");
-        this.reset();
-    });
 
     // Step 2: Show user info form only after products are selected
     $(document).on('click', '#continueToUserInfo', function() {

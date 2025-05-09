@@ -1,3 +1,5 @@
+// Contact page specific JavaScript
+
 // Initialize EmailJS
 (function(){
   emailjs.init("HxxUR9m7kblXxlvIJ");
@@ -16,13 +18,20 @@ function initMap() {
   });
 }
 
-// Handle contact form submission
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-  event.preventDefault();
+// Contact form EmailJS sending function
+function sendContactEmail() {
   emailjs.sendForm('service_w67e1zg', 'template_lcltudi')
     .then(function() {
-      alert('Your message has been sent successfully!');
+      console.log('Email sent successfully');
     }, function(error) {
-      alert('An error occurred: ' + JSON.stringify(error));
+      console.error('Error sending email:', error);
     });
+}
+
+// Contact form initialization
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize form functionality using utility function
+  if (typeof handleFormSubmission === 'function') {
+    handleFormSubmission('contactForm', 'formResponse', 'Message sent successfully!', sendContactEmail);
+  }
 }); 

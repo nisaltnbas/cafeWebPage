@@ -11,11 +11,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Page title and external resources -->
     <title>Café Nova - Contact</title>
+    <!-- CSS files -->
     <link rel="stylesheet" href="css/style.css">
     <!-- jQuery UI CSS -->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <!-- Google Fonts for typography -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <!-- JavaScript files -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" defer></script>
+    <script src="js/utilities.js" defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsMa2j5EzTZffuqfT0Xs7aI4pE7-ISsCg&callback=initMap" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+    <script src="js/contact.js" defer></script>
 </head>
 <body>
     <!-- Header section with navigation -->
@@ -33,7 +41,7 @@
             </div>
         </nav>
     </header>
-
+    
     <!-- Main content area -->
     <main>
         <!-- Contact form container -->
@@ -64,6 +72,13 @@
                 </form>
             </div>
         </div>
+        
+        <!-- Map section -->
+        <div class="container">
+            <h2>Find Us</h2>
+            <!-- Map container -->
+            <div id="map" style="width:100%;height:400px;border-radius:10px;box-shadow:0 3px 10px rgba(0,0,0,0.1);"></div>
+        </div>
     </main>
 
     <!-- Footer section with copyright and additional links -->
@@ -79,14 +94,5 @@
             </div>
         </div>
     </footer>
-
-    <!-- jQuery and jQuery UI -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <script src="js/main.js"></script>
-    <div id="map" style="width:100%;height:300px;margin-top:2rem;"></div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsMa2j5EzTZffuqfT0Xs7aI4pE7-ISsCg&callback=initMap" async defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="js/contact.js"></script>
 </body>
 </html>
